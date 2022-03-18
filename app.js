@@ -92,4 +92,4 @@ app.get('/timecard',(req,res)=>{
     //console.log(now.toFormat('M/D/YY'));
 });
 
-app.listen(3000);
+app.listen(process.env.PORT, process.env.IP);
