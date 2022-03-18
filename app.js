@@ -2,6 +2,21 @@
 const express = require('express');
 const app = express();
 
+
+// -----------------------------------------------
+//      postgresql設定
+// -----------------------------------------------
+const { Client } = require('pg');
+require('dotenv').config({debug:true});
+
+const connection = new Client({
+  connectionString: process.env.DATABASE_URL,
+  //SSLを設定
+  ssl: {
+    sslmode:'require',
+    rejectUnauthorized:false
+  }
+});
 //ルーティング
 //「http://localhost:3000/」を指定したときに、「index.ejs」を表示する
 app.get('/', (req, res) => {
@@ -30,20 +45,6 @@ connection.connect((err) => {
 });
 
 
-// -----------------------------------------------
-//      postgresql設定
-// -----------------------------------------------
-const { Client } = require('pg');
-require('dotenv').config({debug:true});
-
-const connection = new Client({
-  connectionString: process.env.DATABASE_URL,
-  //SSLを設定
-  ssl: {
-    sslmode:'require',
-    rejectUnauthorized:false
-  }
-});
 // -----------------------------------------------
 //      port
 // -----------------------------------------------
