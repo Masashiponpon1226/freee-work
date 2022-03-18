@@ -25,13 +25,10 @@ app.get('/', (req, res) => {
         'SELECT * FROM testtb', //発行するクエリ
         (error,result) => {
           if(error) throw error;
-          res.render('a.ejs',{items:result.rows}); //クエリ結果をitemsとしてindex.ejsに渡す
+          res.render('a.ejs',{items:result}); //クエリ結果をitemsとしてindex.ejsに渡す
         }
       );
 });
-
-
-
 
 // --------  接続  -----------
 connection.connect((err) => {
