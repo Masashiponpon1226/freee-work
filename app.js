@@ -16,14 +16,7 @@ app.get('/', (req, res) => {
 });
 
 
-// --------  接続情報  -----------
-const connection = new Client({
-  //接続先DB情報を記述
-  host: 'localhost',
-  user: 'iwamotomasashi',
-  password: 'masashi1226',
-  database: 'postgres'
-});
+
 
 // --------  接続  -----------
 connection.connect((err) => {
