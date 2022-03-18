@@ -1,20 +1,18 @@
+//この２行はお決まりのやつ
 const express = require('express');
 const app = express();
 
-
-require('date-utils');
-
-
-
-app.set("view engine", "ejs");
-
-app.use(express.static('public'));
-
-app.get('/',(req,res)=>{
-    res.render('top.ejs');
+//ルーティング
+//「http://localhost:3000/」を指定したときに、「index.ejs」を表示する
+app.get('/', (req, res) => {
+  res.render('a.ejs');
 });
-let port = process.env.PORT;
 
+// -----------------------------------------------
+//      port
+// -----------------------------------------------
+//LocalとHeroku接続先によってPORTを切り替える
+let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
