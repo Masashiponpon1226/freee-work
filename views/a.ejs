@@ -7,6 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
+  <h1>Hello World!</h1>
+  <!-- ↓↓↓↓↓　ここから　↓↓↓↓↓↓ -->
+  <ul class="table-body">
+    <% items.forEach((item) => { %>
+      <li>
+        <div class="item-data">
+          <span class="id-column"><%= item.id %></span>
+          <span class="name-column"><%= item.name %></span>
+        </div>
+      </li>
+    <% }) %>
+  <!-- ↑↑↑↑↑　ここまで　↑↑↑↑↑ -->
+  </ul>
 </body>
 </html>
