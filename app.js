@@ -40,15 +40,7 @@ connection.connect((err) => {
   console.log('success');
 });
 
-// -----------------------------------------------
-//      postgresql設定
-// -----------------------------------------------
-const { Client } = require('pg');
-require('dotenv').config({debug:true});  //ここに追加
 
-const connection = new Client({
-  connectionString: process.env.DATABASE_URL  //DB情報を環境変数DATABASE_URLに変更
-});
 // -----------------------------------------------
 //      postgresql設定
 // -----------------------------------------------
