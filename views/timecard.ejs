@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hello World Test Page 2</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="https://www.freee.co.jp" class="header-logo">
+                <img src="/images/freee.png" width="100%" height="100%">
+            </a>
+            <div class="header-list">
+                    <ul>
+                            <li class="large"> <b>勤怠管理アプリ</b></li>
+                            <li> 
+                              <a class="timecard" href="javascript:history.back()"> 戻る</a>
+                          </li>
+                    </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-time">
+                <h2>現在の時間</h2>
+                <% 
+                function set2(num) {
+                    // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+                    let ret;
+                    if (num < 10) { ret = "0" + num; }
+                    else { ret = num; }
+                    return ret;
+                  }
+                var now = new Date(); 
+                var day = set2(now.getDate());
+                var hour = set2(now.getHours());
+                var min = set2(now.getMinutes());
+                var sec = set2(now.getSeconds()); 
+                %>
+         
+                <h1> <%=hour %> 時 <%=min %> 分 <%=sec %> 秒 </h1>                           
+            </div>  
+            <div class="container">
+                    <div class="container-header">
+                      <h1>タイムカード</h1>
+                    </div>
+                    <div class="index-table-wrapper">
+                      <div class="table-head">
+                        <span class="head-index">日づけ</span>
+                        <span class="head-index">出勤時刻</span>
+                        <span class="head-index">退勤時刻</span>
+                        <span class="head-index">休憩時間</span>
+                        <span class="head-index">勤務時間</span>
+                      </div>
+                      <ul class="table-body">
+                        <% cards.forEach((card) => { %>
+                          <li>
+                            <div class="item-data">
+                                <span class="date-column">
+                                    <%= card.date.getFullYear()%>-<%= card.date.getMonth()+1 %>-<%= card.date.getDate()%>
+                                </span>
+                                <span class="time-column"><%= card.startime%></span>
+                                <span class="time-column"><%= card.finishtime%></span>
+                                <span class="time-column"><%= card.resttime%></span>
+                                <span class="time-column"><%= card.worktime%></span>
+                            </div>
+                          </li>
+                        <% }) %>
+                      </ul>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>

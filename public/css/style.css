@@ -1,0 +1,278 @@
+/* reset ================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 100%;
+    font-family: 'Hiragino Sans', sans-serif;
+    line-height: 1.7;
+    letter-spacing: 1px;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #D9E5FF;
+    color: #6c7686;
+    font-family: "Avenir Next"
+  }
+  
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    transition: all 0.3s ease;
+  }
+  
+  
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+  
+  h1 {
+    font-weight: 600;
+  }
+/* top ================================ */
+    /* header ================================ */
+.header{
+    background-color: #fff;
+    color: #3333CC;
+    height: 90px;
+   
+}
+.header-logo{
+    float: left;
+    height: 90px;
+    width: 90px;
+   
+}
+.header-list li{
+    float:left;
+    list-style: none;
+    text-align: center;
+    padding: 0px 20px;
+    line-height: 90px;
+
+}
+.large{
+    font-size: 200%;
+}
+.timecard{
+    font-size: 100%;
+    color: #3333CC;
+}
+    /* main ================================ */
+.main {
+    margin: 50px 80px;
+}
+.main-time h1{
+    font-size: 80px;
+}
+.main-time {
+    text-align: center;
+}
+.main-btn{
+    margin:0 30px;
+}
+.btn1{
+    padding:40px 60px;
+    margin:50px 90px;
+     display: inline-block;
+     opacity:0.8;
+     font-size: 50px;
+     color: #6c7686;
+     opacity:0.8;
+     border-radius: 15px;
+}
+.btn2{
+    padding:40px 60px;
+    margin:50px 90px;
+     display: inline-block;
+     opacity:0.8;
+     font-size: 50px;
+     color: #6c7686;
+     opacity:0.3;
+     border-radius: 15px;
+
+}
+.btn3{
+    padding:10px 315px;
+    margin:50px 90px;
+     display: inline-block;
+     box-sizing:border-box;
+     opacity:0.8;
+     font-size: 50px;
+     color: #6c7686;
+     opacity:0.8;
+     border-radius: 15px;
+
+     text-align: center;
+}
+.btn4{
+    padding:10px 265px;
+    margin:50px 90px;
+     display: inline-block;
+     box-sizing:border-box;
+     opacity:0.8;
+     font-size: 50px;
+     color: #6c7686;
+     opacity:0.8;
+     border-radius: 15px;
+
+     text-align: center;
+}
+.btn5{
+    padding:10px 315px;
+    margin:50px 90px;
+     display: inline-block;
+     box-sizing:border-box;
+     opacity:0.8;
+     font-size: 50px;
+     color: #6c7686;
+     opacity:0.3;
+     border-radius: 15px;
+
+     
+     text-align: center;
+}
+.btn6{
+  padding:10px 215px;
+  margin:50px 90px;
+   display: inline-block;
+   box-sizing:border-box;
+   opacity:0.8;
+   font-size: 50px;
+   color: #6c7686;
+   opacity:0.8;
+   border-radius: 15px;
+
+   text-align: center;
+}
+
+
+.btn1:hover{
+    opacity:1
+}
+.btn3:hover{
+    opacity:1
+}
+.cursor{
+    cursor: pointer;
+}
+
+.green{
+    background-color: #5BFF7F;
+    box-shadow:0 10px #1a7940;
+}
+
+.yellow{
+    background-color: #F5F5DC;
+    box-shadow:0 10px #FFFF99;
+}
+.gray{
+  background-color: #CCCCCC;
+  box-shadow:0 10px #555555;
+}
+.red{
+    background-color: #FFABCE;
+    box-shadow:0 10px #FF5192;
+}
+.push:active{
+    position:relative;
+    top:7px;
+    box-shadow:none;
+}
+
+.conc-letter {
+    text-align: center;
+}
+.conc-letter h1{
+    font-size: 40px;
+}
+/* timercard ================================ */
+.container {
+    width: 80%;
+    min-width: 360px;
+    max-width: 720px;
+    margin: 0 auto;
+    margin-top: 56px;
+  }
+  
+  .container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+
+  .table-head {
+    display: flex;
+    background-color: #b7cadc;
+    border-radius: 2px 2px 0 0;
+    height: 44px;
+    font-size: 16px;
+    line-height: 46px;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+  }
+  .head-index{
+      padding:0 37px;
+  }
+  
+  .id-column {
+    width: 72px;
+    text-align: center;
+
+  }
+  
+  .table-body {
+    background-color: #ffffff;
+  }
+  .table-body ul{
+    
+    text-align: left;
+  }
+
+  .table-body li {
+    left:30px;
+    list-style-type: none;
+
+    height: 72px;
+    border: 1px solid #f0f4f9;
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+  }
+  
+  .table-body .id-column {
+    font-size: 16px;
+    color: #bac6d3;
+  }
+  
+  .table-body .date-column {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8491a5;
+    margin-left:30px;
+    margin-right:15px;
+  }
+  
+  .item-data {
+    display: flex;
+  }
+
+  .table-body .time-column {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8491a5;
+    padding:0 39px;
+
+  }

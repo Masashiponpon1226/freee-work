@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hello World Test Page 2</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="https://www.freee.co.jp" class="header-logo">
+                <img src="/images/freee.png" width="100%" height="100%">
+            </a>
+            <div class="header-list">
+                    <ul>
+                            <li class="large"> <b>勤怠管理アプリ</b></li>
+                            <li> 
+                                <a class="timecard" href="/timecard"> タイムカードを確認する</a>
+                            </li>
+                    </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-time">
+                <h2>現在の時間</h2>
+                <% 
+                function set2(num) {
+                    // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+                    let ret;
+                    if (num < 10) { ret = "0" + num; }
+                    else { ret = num; }
+                    return ret;
+                  }
+                var now = new Date(); 
+                var day = set2(now.getDate());
+                var hour = set2(now.getHours());
+                var min = set2(now.getMinutes());
+                var sec = set2(now.getSeconds()); 
+                %>
+
+                <h1> <%=hour%> 時 <%=min%> 分 <%=sec%> 秒 </h1>                           
+            </div>  
+            <div class="main-btn">
+                <a class="btn2 green">
+                    <b>出勤する</b> 
+                </a>
+                <a href="/finish" class="btn1 cursor push yellow">
+                    <b>退勤する</b> 
+                </a>
+                <a href="/rest" class="btn3 cursor push gray">
+                    <b>休憩する</b> 
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
