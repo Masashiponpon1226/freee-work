@@ -5,6 +5,9 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 var dayjs = require('dayjs');
+dayjs.extend(require('dayjs/plugin/timezone'));
+dayjs.extend(require('dayjs/plugin/utc'));
+dayjs.tz.setDefault('Asia/Tokyo');
 
 // -----------------------------------------------
 //      postgresql設定
