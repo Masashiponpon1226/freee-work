@@ -2,12 +2,16 @@
 const express = require('express');
 const app = express();
 
+
 app.set("view engine", "ejs");
 app.use(express.static('public'));
-var dayjs = require('dayjs');
-dayjs.extend(require('dayjs/plugin/timezone'));
-dayjs.extend(require('dayjs/plugin/utc'));
-dayjs.tz.setDefault('Asia/Tokyo');
+const dayjs = require('dayjs');
+const utc = require('dayjs/plugin/utc');
+const timezone = require('dayjs/plugin/timezone');
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 
 // -----------------------------------------------
 //      postgresql設定
@@ -52,7 +56,7 @@ app.get('/index',(req,res)=>{
 });
 
 app.get('/start',(req,res)=>{
-    var now = dayjs();
+    var now = dayjs().tz('Asia/Tokyo');
     var query = {
         text: 'insert into datetime (date, startime,finishtime,resttime,worktime) values($1, $2, $3, $4, $5)',
         values: [now.format('YYYY-MM-DD'),now.format('HH:mm:ss'),'000000','000000','000000']
@@ -77,7 +81,8 @@ app.get('/rest',(req,res)=>{
 });
 
 app.get('/finish',(req,res)=>{
-    var now = dayjs();
+    dayjs.locale('ja');
+    var now = dayjs().tz('Asia/Tokyo');
     var query2 = {
         text: 'update datetime set finishtime = $1 where id = (select max(id) from datetime)',
         values: [now.format('HH:mm:ss')]
