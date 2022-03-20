@@ -34,10 +34,10 @@ connection.connect((err) => {
 app.get('/', (req, res) => {
     //PostreSQL接続
     connection.query(
-        'SELECT * FROM testtb', //発行するクエリ
+        'SELECT * FROM datetime', //発行するクエリ
         (error,result) => {
           if(error) throw error;
-          res.render('a.ejs',{items:result}); //クエリ結果をitemsとしてindex.ejsに渡す
+          res.render('a.ejs',{items:result.rows}); //クエリ結果をitemsとしてindex.ejsに渡す
         }
       );
 });
