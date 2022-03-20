@@ -34,8 +34,6 @@ const connection = new Client({
   
 });
 
-console.log(process.env.DATABASE_URL);
-
 // --------  接続  -----------
 connection.connect((err) => {
     //エラー時の処理
