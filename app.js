@@ -17,6 +17,18 @@ const connection = new Client({
     rejectUnauthorized:false
   }
 });
+
+// --------  接続  -----------
+connection.connect((err) => {
+    //エラー時の処理
+    if(err){
+        console.log('error connecting:' + err.stack);
+        return;
+    }
+    //接続成功時の処理
+    console.log('success');
+  });
+
 //ルーティング
 //「http://localhost:3000/」を指定したときに、「index.ejs」を表示する
 app.get('/', (req, res) => {
@@ -29,19 +41,6 @@ app.get('/', (req, res) => {
         }
       );
 });
-
-// --------  接続  -----------
-connection.connect((err) => {
-  //接続できなかったとき、エラーをコンソールに表示させる
-  if(err){
-      console.log('error connecting:' + err.stack);
-      return;
-  }
-  //今回はわかりやすいように、接続に成功したらコンソールに「success」と表示されるようにします
-  console.log('success');
-});
-
-
 // -----------------------------------------------
 //      port
 // -----------------------------------------------
