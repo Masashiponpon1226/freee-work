@@ -32,7 +32,7 @@
                     else { ret = num; }
                     return ret;
                   }
-                var now = new Date(); 
+                var now = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }); 
                 var day = set2(now.getDate());
                 var hour = set2(now.getHours());
                 var min = set2(now.getMinutes());
