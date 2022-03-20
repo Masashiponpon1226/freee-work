@@ -2,6 +2,21 @@
 const express = require('express');
 const app = express();
 
+app.use(express.static('public'));
+
+
+//ルーティング
+//「http://localhost:3000/」を指定したときに、「index.ejs」を表示する
+app.get('/', (req, res) => {
+    //PostreSQL接続
+    connection.query(
+        'SELECT * FROM datetime', //発行するクエリ
+        (error,result) => {
+          if(error) throw error;
+          res.render('a.ejs',{items:result.rows}); //クエリ結果をitemsとしてindex.ejsに渡す
+        }
+      );
+});
 
 // -----------------------------------------------
 //      postgresql設定
@@ -18,7 +33,9 @@ const connection = new Client({
   }
   
 });
+
 console.log(process.env.DATABASE_URL);
+
 // --------  接続  -----------
 connection.connect((err) => {
     //エラー時の処理
@@ -30,18 +47,6 @@ connection.connect((err) => {
     console.log('success');
   });
 
-//ルーティング
-//「http://localhost:3000/」を指定したときに、「index.ejs」を表示する
-app.get('/', (req, res) => {
-    //PostreSQL接続
-    connection.query(
-        'SELECT * FROM datetime', //発行するクエリ
-        (error,result) => {
-          if(error) throw error;
-          res.render('a.ejs',{items:result.rows}); //クエリ結果をitemsとしてindex.ejsに渡す
-        }
-      );
-});
 // -----------------------------------------------
 //      port
 // -----------------------------------------------
