@@ -13,7 +13,7 @@ const connection = new Client({
   connectionString: process.env.DATABASE_URL,
   //SSLを設定
   ssl: {
-    sslmode:'require',
+    sslmode=require,
     rejectUnauthorized:false
   }
 });
