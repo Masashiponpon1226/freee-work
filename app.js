@@ -2,9 +2,6 @@
 const express = require('express');
 const app = express();
 
-app.use(express.static('public'));
-
-
 //ルーティング
 //「http://localhost:3000/」を指定したときに、「index.ejs」を表示する
 app.get('/', (req, res) => {
